@@ -26,32 +26,44 @@ export class HomeComponent implements OnInit {
      this.ws.connect();
      this.feed = this.ws.subscribe("feed");
 
-     this.feed.on('prueba', (data: any) => {
-      this.message.push(data);
+    //  emit enviar datos al websocket
+    // on escuchar al websocket
+
+     this.feed.on('test', (data: any) => {
+      this.message.push('Conectado al server');
      })
   }
 
   adelante(param: string){
     this.feed.emit('adelante', param);
-    this.message.push(param);
+    this.feed.on('changeAdelante', ( data: any) => {
+      this.message.push(data);
+    });
   }
   atras(param: string){
     this.feed.emit('atras', param);
-    this.message.push(param);
+    this.feed.on('changeAtras', ( data: any) => {
+      this.message.push(data);
+    });
   }
   izquierda(param: string){
     this.feed.emit('izquierda', param);
-    this.message.push(param);
+    this.feed.on('changeIzquierda', ( data: any) => {
+      this.message.push(data);
+    });
   }
   derecha(param: string){
-    this.feed.emit('prueba', param);
-    this.message.push(param);
-  }
-  Suscribirte()
-  {
-    this.feed.on('prueba', (data: any) => {
+    this.feed.emit('derecha', param);
+    this.feed.on('changeDerecha', ( data: any) => {
       this.message.push(data);
-     })
+    });
+  }
+  Suscribirte(param: string)
+  {
+    this.feed.emit('test', param);
+    this.feed.on('subscripcion', ( data: any) => {
+      this.message.push(data);
+    });
   }
   Firebase()
   {
