@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { FormsModule } from '@angular/forms';
 import { RegisterComponent } from './register/register.component';
+import { LogComponent } from './log/log.component';
 
 
 
@@ -13,7 +14,7 @@ import { RegisterComponent } from './register/register.component';
   declarations: [
     AppComponent,
     HomeComponent,
-    
+    LogComponent,
     RegisterComponent
   ],
   imports: [
