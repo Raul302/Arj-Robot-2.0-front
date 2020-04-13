@@ -23,6 +23,7 @@
     "babel-polyfill": "^6.26.0",
     "bootstrap4-toggle": "^3.6.1",
     "rxjs": "~6.5.4",
+    "startbootstrap-sb-admin-2": "^4.0.7",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"
   },

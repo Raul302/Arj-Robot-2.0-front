@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Homemodel } from './home.model';
-import { HomeService } from '../home.service';
+import { HomeService } from '../services/home.service';
 import Ws  from '@adonisjs/websocket-client';
 
 
